@@ -24,12 +24,7 @@ public class LoginTest {
 
     }
 
-    @AfterEach
-    void tearDown(){
-        if(driver!=null){
-            driver.quit();
-        }
-    }
+
 
     @Test
     void loginCorrecto() throws InterruptedException {
@@ -51,5 +46,12 @@ public class LoginTest {
         assertTrue(loginPage.obtenerTextoError().contains("Username and password do not match"),
                 "El mensaje de error es diferente al esperado");
 
+    }
+
+    @AfterEach
+    void tearDown(){
+        if(driver!=null){
+            driver.quit();
+        }
     }
 }
